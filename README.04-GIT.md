@@ -28,7 +28,7 @@ git branch -M main
 
 workspace=$(pwd);
 cd /d/code/shell/github-cli;shfile=./index.sh;
-repourl="ymc-github/ymz-node-suite-comfyui";repodesc="custom nodes for comfyui,like AI painting in comfyui";
+repourl="ymc-github/ymc-node-suite-comfyui";repodesc="custom nodes for comfyui,like AI painting in comfyui";
 
 # add repo with default desc
 $shfile $repourl add # (in plan)
@@ -43,8 +43,8 @@ cd "$workspace"
 
 - [x] add remote repo url
 ```bash
-# git remote add origin https://github.com/YMC-GitHub/ymz-node-suite-comfyui.git
-git remote add origin git@github.com:YMC-GitHub/ymz-node-suite-comfyui.git
+# git remote add origin https://github.com/YMC-GitHub/ymc-node-suite-comfyui.git
+git remote add origin git@github.com:YMC-GitHub/ymc-node-suite-comfyui.git
 ```
 
 - [x] set gitignore and commit it
@@ -158,8 +158,8 @@ git remote remove github
 
 - [ ] set remote repo url from https to git
 ```bash
-git remote set-url origin git@github.com:YMC-GitHub/ymz-node-suite-comfyui.git
-# git remote set-url github git@github.com:YMC-GitHub/ymz-node-suite-comfyui.git
+git remote set-url origin git@github.com:YMC-GitHub/ymc-node-suite-comfyui.git
+# git remote set-url github git@github.com:YMC-GitHub/ymc-node-suite-comfyui.git
 ```
 
 
