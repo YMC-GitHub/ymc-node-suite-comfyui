@@ -224,7 +224,7 @@ git pull origin main
 
 - [x] push remote github repo (no the first time)
 ```bash
-git push -u origin main
+git push origin main
 ```
 
 
