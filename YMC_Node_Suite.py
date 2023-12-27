@@ -2048,10 +2048,13 @@ class XyzUtilKVTxtToOther:
 #         dset=(name, il)
 #         return list_2_tupe([s,e,count,gridAnnotion,dset])
     
+# feat(core): rename 'Save Text File' to io-text-save for issue 3
+    # https://github.com/YMC-GitHub/ymc-node-suite-comfyui/issues/3
+
 # NODE MAPPING
 NODE_CLASS_MAPPINGS = {
-    "Save Text File": WAS_Text_Save,
-    # "Image Save": WAS_Image_Save,
+    "io-text-save": WAS_Text_Save,
+    # "io-image-save": WAS_Image_Save,
     "cutoff-region-util": CutoffRegionUtil,
     "pipe-util-to-basic-pipe": PipeUtilToBasicPipe,
     "canvas-util-cal-size": CanvasUtilCalSize,
@@ -2087,8 +2090,8 @@ NODE_CLASS_MAPPINGS = {
     "region-util-get-by-lt": RegionUtilGetCropLocationByLT
 }    
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "Save Text File": 'save text file',
-    # "Image Save": WAS_Image_Save,
+    "io-text-save": 'save text file',
+    # "io-image-save": WAS_Image_Save,
     "pipe-util-to-basic-pipe": 'to basic pipe',
     "canvas-util-cal-size": 'cal size',
     # "img-util-get-image-size": 'get image size',
