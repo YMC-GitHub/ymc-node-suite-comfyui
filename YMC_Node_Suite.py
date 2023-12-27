@@ -473,21 +473,26 @@ class WAS_Text_Save:
                 "filename_delimiter": ("STRING", {"default":"_"}),
                 "filename_number_padding": ("INT", {"default":4, "min":2, "max":9, "step":1}),
                 "overwrite_mode": (["false", "prefix_as_filename"],),
+                "ext": ("STRING", {"default":".txt"}),
 
             }
         }
 
     OUTPUT_NODE = True
-    RETURN_TYPES = ()
+    # feat(core): add feat that noted in issue 1
+    # https://github.com/YMC-GitHub/ymc-node-suite-comfyui/issues/1
+    RETURN_TYPES = ("STRING", "STRING","STRING")
+    RETURN_NAMES = ('content','filenameWithoutExt','ext')
     FUNCTION = "save_text_file"
     CATEGORY = "Ymc Suite/IO"
 
-    def save_text_file(self, text, path, filename_prefix='ComfyUI', filename_delimiter='_', filename_number_padding=4,overwrite_mode='false'):
+    def save_text_file(self, text, path, filename_prefix='ComfyUI', filename_delimiter='_', filename_number_padding=4,overwrite_mode='false',ext='.txt'):
     
         tokens = TextTokens()
         path = tokens.parseTokens(path)
         filename_prefix = tokens.parseTokens(filename_prefix)
     
+        # feat(core): add paths when it does not exits
         if not os.path.exists(path):
             cstr(f"The path `{path}` doesn't exist! Creating it...").warning.print()
             try:
@@ -495,26 +500,38 @@ class WAS_Text_Save:
             except OSError as e:
                 cstr(f"The path `{path}` could not be created! Is there write access?\n{e}").error.print()
 
+        # feat(core): out info when text is empty
         if text.strip() == '':
             cstr(f"There is no text specified to save! Text is empty.").error.print()
 
         
         delimiter = filename_delimiter
         number_padding = int(filename_number_padding)
-        file_extension = '.txt'
-        filename = self.generate_filename(path, filename_prefix, delimiter, number_padding, file_extension)
+        # file_extension = '.txt'
+        file_extension = ext
+
+        filename ,counter= self.generate_filename_data(path, filename_prefix, delimiter, number_padding, file_extension)
+        
+        filenameWithoutExt = f"{filename_prefix}{delimiter}{counter:0{number_padding}}"
+
+        # feat(core): use prefix as file name when overwrite_mode is 'prefix_as_filename'
         if overwrite_mode == 'prefix_as_filename':
             filename = f"{filename_prefix}{file_extension}"
+            filenameWithoutExt = f"{filename_prefix}"
         
-        file_path = os.path.join(path, filename)
+        fileLocation = os.path.join(path, filename)
 
-        self.writeTextFile(file_path, text)
+        self.writeTextFile(fileLocation, text)
 
-        update_history_text_files(file_path)
+        update_history_text_files(fileLocation)
+        # filenameWithoutExt,ext = os.path.splitext(filename)
 
-        return (text, { "ui": { "string": text } } )
+        # return (text, { "ui": { "string": text } } )
+        # feat(core): use the 2th result is filename without ext
+        # feat(core): use the 3th result is ext
+        return text, filenameWithoutExt,file_extension
         
-    def generate_filename(self, path, prefix, delimiter, number_padding, extension):
+    def generate_filename_data(self, path, prefix, delimiter, number_padding, extension):
         pattern = f"{re.escape(prefix)}{re.escape(delimiter)}(\\d{{{number_padding}}})"
         existing_counters = [
             int(re.search(pattern, filename).group(1))
@@ -533,7 +550,7 @@ class WAS_Text_Save:
             counter += 1
             filename = f"{prefix}{delimiter}{counter:0{number_padding}}{extension}"
 
-        return filename
+        return filename,counter
 
     def writeTextFile(self, file, content):
         try:
