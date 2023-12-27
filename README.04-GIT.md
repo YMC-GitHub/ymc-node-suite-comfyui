@@ -242,3 +242,11 @@ git add __init__.py YMC_Node_Suite.py; git commit -m "feat(core): add custom nod
 ```bash
 git add README.md CHANGELOG*; git commit -m "docs(core): add changelog info";
 ```
+
+- [x] add tag
+```bash
+git log --oneline
+git tag v1.0.0 -m "version 1.0.0" 4ce981e
+git tag v2.0.0 -m "version 2.0.0" 44d9b66
+git push origin main --tags
+```
