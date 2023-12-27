@@ -237,3 +237,8 @@ git add requirements.txt ; git commit -m "build(core): add requirements nodes";
 ```bash
 git add __init__.py YMC_Node_Suite.py; git commit -m "feat(core): add custom nodes";
 ```
+
+- [x] add changelog for this repo
+```bash
+git add README.md CHANGELOG*; git commit -m "docs(core): add changelog info";
+```
