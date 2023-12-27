@@ -15,10 +15,6 @@ MIT
 
 ## Changelog
 
-build(core): get feat in bash `cat YMC_Node_Suite.py | grep "^ *# feat.*" | sed "s/ *#/- [x]/g" > CHANGELOG.FEAT.md`
-
-build(core): get build in bash `cat YMC_Node_Suite.py | grep "^ *# build.*" | sed "s/ *#/- [x]/g" > CHANGELOG.BUILD.md`
-
 ### 2.0.0
 
 - [x] feat(core): add feat that noted in issue 1
