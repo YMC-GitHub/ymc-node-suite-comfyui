@@ -250,3 +250,9 @@ git tag v1.0.0 -m "version 1.0.0" 4ce981e
 git tag v2.0.0 -m "version 2.0.0" 44d9b66
 git push origin main --tags
 ```
+
+- [x] get feat or build note from code
+
+build(core): get feat in bash `cat YMC_Node_Suite.py | grep "^ *# feat.*" | sed "s/ *#/- [x]/g" > CHANGELOG.FEAT.md`
+
+build(core): get build in bash `cat YMC_Node_Suite.py | grep "^ *# build.*" | sed "s/ *#/- [x]/g" > CHANGELOG.BUILD.md`
