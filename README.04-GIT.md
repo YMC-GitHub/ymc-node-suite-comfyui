@@ -248,6 +248,7 @@ git add README.md CHANGELOG*; git commit -m "docs(core): add changelog info";
 ```bash
 git log --oneline
 git tag v1.0.0 -m "version 1.0.0" 4ce981e
+git tag v1.1.0 -m "version 1.1.0" 28b0da0
 git tag v2.0.0 -m "version 2.0.0" 44d9b66
 git push origin main --tags
 ```
