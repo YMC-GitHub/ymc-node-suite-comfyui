@@ -17,8 +17,11 @@ MIT
 
 ### 2.0.0
 
-- [x] feat(core): add feat that noted in issue 1
 - [x] feat(core): rename 'Save Text File' to io-text-save for issue 3
+
+### 1.1.0
+- [x] feat(core): add feat that noted in issue 1
+
 
 ### 1.0.0
 
