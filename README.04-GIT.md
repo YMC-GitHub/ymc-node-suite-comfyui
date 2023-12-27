@@ -70,6 +70,7 @@ git add LICENSE ; git commit -m "build(core): add license";
 - [x] set readmd and commit it
 ```bash
 git add README.md ; git commit -m "docs(core): add readme";
+git add README.md ; git commit -m "docs(core): put readme to readable";
 ```
 
 - [ ] get time with format
