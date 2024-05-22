@@ -1,0 +1,15 @@
+[project]
+name = "ymc-node-suite-comfyui"
+description = "ymc 's nodes for comfyui. This extension is composed of nodes that provide various utility features such as text, region, and I/O."
+version = "1.0.0"
+license = "LICENSE"
+dependencies = ["cmake", "fairscale>=0.4.4", "git+https://github.com/WASasquatch/img2texture.git", "gitpython", "imageio", "joblib", "matplotlib", "numba", "numpy<1.24>=1.18", "opencv-python-headless[ffmpeg]<=4.7.0.72", "pilgram", "git+https://github.com/WASasquatch/ffmpy.git", "rembg", "scikit-image==0.20.0", "scikit-learn", "scipy", "timm>=0.4.12", "tqdm", "transformers==4.26.1"]
+
+[project.urls]
+Repository = "https://github.com/YMC-GitHub/ymc-node-suite-comfyui"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ymc-node-suite-comfyui"
+Icon = ""
