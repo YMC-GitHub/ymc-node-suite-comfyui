@@ -1,0 +1,15 @@
+[project]
+name = "ymc-node-suite-comfyui"
+description = "custom nodes for comfyui,like AI painting in comfyui"
+version = "3.0.0"
+
+  [project.license]
+  file = "LICENSE"
+
+  [project.urls]
+  Repository = "https://github.com/ymc-github/ymc-node-suite-comfyui"
+
+[tool.comfy]
+PublisherId = "ymc-github"
+DisplayName = "ymc-node-suite-comfyui"
+Icon = ""
