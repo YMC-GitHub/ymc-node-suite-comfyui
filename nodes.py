@@ -33,6 +33,7 @@ import time
 # import torch
 # from tqdm import tqdm
 
+# define manifest about this project in dict
 MANIFEST = {
     "name": "ymc node suite",
     "version": (1,0,0),
