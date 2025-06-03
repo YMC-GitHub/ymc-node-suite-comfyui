@@ -1,39 +1,37 @@
 
 # [save text file of was node suite](D:\code\python\comfyui\custom_nodes\was-node-suite-comfyui\WAS_Node_Suite.py)
 
-
-from PIL import Image, ImageFilter, ImageEnhance, ImageOps, ImageDraw, ImageChops, ImageFont
-from PIL.PngImagePlugin import PngInfo
-from io import BytesIO
+# from PIL import Image, ImageFilter, ImageEnhance, ImageOps, ImageDraw, ImageChops, ImageFont
+# from PIL.PngImagePlugin import PngInfo
+# from io import BytesIO
 # from typing import Optional
 from typing import Callable, List, Dict, Any, Union, Tuple, cast,Optional
 from urllib.request import urlopen
-import comfy.diffusers_convert
-import comfy.samplers
-import comfy.sd
-import comfy.utils
-import comfy.clip_vision
-import model_management
+# import comfy.diffusers_convert
+# import comfy.samplers
+# import comfy.sd
+# import comfy.utils
+# import comfy.clip_vision
+# import model_management
 import folder_paths as comfy_paths
-import model_management
-from comfy_extras.chainner_models import model_loading
+# from comfy_extras.chainner_models import model_loading
 import glob
 import hashlib
 import json
-import nodes
-import math
-import numpy as np
+# import nodes
+# import math
+# import numpy as np
 from numba import jit
 import os
 import random
 import re
-import requests
+# import requests
 import socket
-import subprocess
+# import subprocess
 import sys
 import time
-import torch
-from tqdm import tqdm
+# import torch
+# from tqdm import tqdm
 
 MANIFEST = {
     "name": "ymc node suite",
