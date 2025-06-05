@@ -84,6 +84,19 @@ sh -c "cp -r /d/code/python/panz/comfyui-nodes/ymc-node-suite-comfyui /o/app/Com
 
 # conda activate sdwa;cd O:\app\ComfyUI;python main.py;
 ```
+## opv - features
+```bash
+# use ymc suite/text/cutoff
+git add modules/text/node_cutoff_region.py ; git commit -m "feat(core): rename category for reading"
+# use ymc suite/text/plain
+git add modules/text/node_plain.py ; git commit -m "feat(core): use suite/text/plain"
+
+git add modules/text/node_pyio.py ; git commit -m "feat(core): use suite/text/io"
+git add modules/text/node_region.py ; git commit -m "feat(core): use suite/text/region"
+
+git add modules/text/node_cutoff*.py ; git commit -m "build(core): use cutoff as filename"
+git add modules/text/node_prompt*.py ; git commit -m "build(core): use category in itself"
+```
 
 ## opv - docs
 ```bash
@@ -166,4 +179,50 @@ yours edit-docs --tpl-file README.md --data-file demo.md --label "<!-- inject-de
 # git add "packages/$name/*.md" ; git commit -m "docs(core): gen docs";
 
 # git add "packages/$name/*.md" ; git commit -m "docs(core): put docs";
+```
+
+## opv - tags
+```powershell
+# add tags
+git tag -a v1.0.0 -m "v1.0.0"
+
+# git push ghg v1.0.0
+
+git log --oneline 
+git tag
+
+
+#$ver=yours version/bump --file pyproject.toml --name "tool.poetry.version" --method minor 
+$ver="3.0.0"
+# add tags to some hash
+git tag v$ver 73da0b9;
+
+git tag v$ver HEAD;
+
+# add/commit/tag
+git add . ; git commit -m "build(core): put verison";git tag v$ver HEAD;
+# git add . ; git commit -m "v$ver";git tag v$ver HEAD;
+
+# add/commit with version? do
+git add . ; git commit -m "$ver";
+
+# git push ghg main --tags --force
+# git push ghg main --tags --force
+# git push ghg v$ver
+```
+## opv - workflow files
+```powershell
+# touch
+
+yours touch .github/workflows/publish_to_comfy.yml
+# edit
+# ...
+
+# add secret form comfy
+# ...
+
+git add .github/workflows/publish_to_comfy.yml; git commit -m "build(core): add publish to comfy workflow";
+git add .github/workflows/publish_to_comfy.yml; git commit -m "build(core): check node in comfy";
+
+git tag -d v$ver
 ```
