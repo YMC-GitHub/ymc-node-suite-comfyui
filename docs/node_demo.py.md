@@ -1,4 +1,6 @@
-from .conf import CURRENT_CATEGORY,CURRENT_FUNCTION
+CURRENT_CATEGORY="ymc/suite"
+CURRENT_FUNCTION="exec"
+
 class TextInput:
     @classmethod
     def INPUT_TYPES(s):

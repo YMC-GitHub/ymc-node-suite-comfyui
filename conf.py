@@ -1,2 +1,0 @@
-CURRENT_CATEGORY="ymc/suite"
-CURRENT_FUNCTION="exec"

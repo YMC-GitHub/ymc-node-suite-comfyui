@@ -1,0 +1,2 @@
+CURRENT_CATEGORY="ymc suite/text"
+CURRENT_FUNCTION="exec"
