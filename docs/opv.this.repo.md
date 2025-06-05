@@ -193,6 +193,8 @@ git tag
 
 
 #$ver=yours version/bump --file pyproject.toml --name "tool.poetry.version" --method minor 
+
+#$ver=yours version/bump --file pyproject.toml --name "project.version" --method minor 
 $ver="3.0.0"
 # add tags to some hash
 git tag v$ver 73da0b9;
