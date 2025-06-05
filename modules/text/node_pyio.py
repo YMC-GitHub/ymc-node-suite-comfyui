@@ -6,7 +6,9 @@ import hashlib
 import os
 from pathlib import Path
 from yors_pano_list_util import ListDelExclude,ListFillOne,ListToTupe,ListShuffle
-CURRENT_CATEGORY="ymc suite/text"
+
+# feat(core): use ymc suite/text/io as category
+CURRENT_CATEGORY="ymc suite/text/io"
 CURRENT_FUNCTION="exec"
 
 def pyioReadDirectory(dir='',pattern='*.txt'):
