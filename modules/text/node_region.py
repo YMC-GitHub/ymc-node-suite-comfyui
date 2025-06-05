@@ -1,7 +1,8 @@
 
 from yors_pano_list_util import ListDelExclude,ListFillOne,ListToTupe,ListShuffle
-# CURRENT_CATEGORY="Ymc Suite/region-util"
-CURRENT_CATEGORY="ymc suite/text"
+
+# feat(core): use ymc suite/text/region as category
+CURRENT_CATEGORY="ymc suite/text/region"
 CURRENT_FUNCTION="exec"
 
 def region_strify(l:list):
