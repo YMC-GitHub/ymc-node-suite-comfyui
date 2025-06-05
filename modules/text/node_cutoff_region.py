@@ -3,7 +3,8 @@ from yors_pano_list_util import ListDelExclude,ListFillOne,ListToTupe,ListShuffl
 
 # from .conf import CURRENT_CATEGORY,CURRENT_FUNCTION
 
-CURRENT_CATEGORY="ymc suite/text"
+# feat(core): use ymc suite/text/cutoff as category
+CURRENT_CATEGORY="ymc suite/text/cutoff"
 CURRENT_FUNCTION="exec"
 
 def StrSetUndefinedAsEmpty(text,deft:str=""):
@@ -39,7 +40,7 @@ def CutoffRegionTextBurn(main_text, target_text, weight):
     return region_text, target_text, weight
 
 
-# feat(core): NodeCutoffRegionTextBurn - cutoff - region text burn
+# feat(core): NodeCutoffRegionTextBurn - region text burn
 class NodeCutoffRegionTextBurn:
     @classmethod
     def INPUT_TYPES(s):
@@ -55,7 +56,7 @@ class NodeCutoffRegionTextBurn:
     RETURN_NAMES = ('region_text','target_text','prompt_weight')
     FUNCTION = CURRENT_FUNCTION
     CATEGORY = CURRENT_CATEGORY
-    NODE_DESC = "cutoff - region text burn"
+    NODE_DESC = "region text burn"
 
     OUTPUT_NODE = True
 
@@ -78,7 +79,7 @@ def CutoffColorTextPreset(custom:str="sliver"):
     TEXT_BASE_COLORS_VALUE[TEXT_BASE_COLORS_COUNT-1]=custom
     return ListToTupe(TEXT_BASE_COLORS_VALUE)
 
-# feat(core): NodeCutoffRegionColorTextPreset - cutoff - color preset of region text
+# feat(core): NodeCutoffRegionColorTextPreset - color text preset
 class NodeCutoffRegionColorTextPreset:
     @classmethod
     def INPUT_TYPES(s):
@@ -93,7 +94,7 @@ class NodeCutoffRegionColorTextPreset:
     RETURN_NAMES = ListToTupe(TEXT_BASE_COLORS)
     FUNCTION = CURRENT_FUNCTION
     CATEGORY = CURRENT_CATEGORY
-    NODE_DESC = "cutoff - color preset of region text"    
+    NODE_DESC = "color text preset"    
     OUTPUT_NODE = True
     def exec(self, custom):
         # Converted inputs are sent as the string of 'undefined' if not connected
