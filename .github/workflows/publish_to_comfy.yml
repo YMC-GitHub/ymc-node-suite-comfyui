@@ -6,6 +6,9 @@ on:
       - main
     paths:
       - "pyproject.toml"
+    # only run when tags are pushed
+    # tags:
+    #   - '*'
 
 jobs:
   publish-node:
@@ -14,6 +17,14 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v4
+      - name: Check if Node Exists in Registry
+        run: |
+          curl -s -X GET "https://registry.comfy.org/nodes/ymc-node-suite-comfyui" -H "Authorization: Bearer ${{ secrets.COMFY_REGISTRY_TOKEN }}" \
+          | jq '.claimed_by // empty' > claimed_status.txt
+          if [ -s claimed_status.txt ]; then
+            echo "Node already exists and is claimed. Skipping publish step."
+            exit 0
+          fi
       - name: Publish Custom Node
         uses: Comfy-Org/publish-node-action@main
         with:
