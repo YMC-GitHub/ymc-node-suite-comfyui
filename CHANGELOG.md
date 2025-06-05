@@ -1,0 +1,37 @@
+- feat(core): NodePlainTextList - input text preset
+- feat(core): NodePlainTextListAdv - input text preset - adv
+- feat(core): NodePlainTextListJoinTextAdv - join text to text preset - adv
+- feat(core): NodePlainTextJoin - join text
+- feat(core): NodePlainTextRandom - random text in list
+- feat(core): NodePlainTextLoop - get text in list (loop)
+- feat(core): NodePlainTextReplace - replace text
+- feat(core): do nothing when action no
+- feat(core): replace text
+- feat(core): NodeNumStrToNum - text to number
+- feat(core): NodeNumStrToBool - text to bool
+- feat(core): NodePlainTextSwitchWithBool - text switch with bool
+- feat(core): NodePlainTextSwitchWithText - text switch with text
+- feat(core): NodeTextShow - show text
+- feat(core): NodeTextCalcSize - cacluate width and height
+- feat(core): NodePromptAdd - prompt add some text
+- feat(core): NodePromptAdvAdd - prompt add some text (adv)
+- feat(core): NodePromptSearch - prompt search some text
+- feat(core): NodePromptDup - prompt dup some text
+- feat(core): NodePromptAdvDup - prompt dup some text (adv)
+- feat(core): NodePromptShuffle - prompt shuffle some text
+- feat(core): NodePromptDel - prompt del some text
+- feat(core): NodePromptStd - prompt std
+- feat(core): NodePromptInput - prompt input
+- feat(core): NodePromptUnweight - prompt unweight
+- feat(core): NodePromptJoin - prompt join
+- feat(core): NodePromptRandom - prompt random
+- feat(core): NodePromptWeight - prompt add weight
+- feat(core): NodePyioFilenameListDetect - pyio - detect filename list
+- feat(core): NodePyioFilenameListOutmDetect - pyio - detect filename list (outm)
+- feat(core): IoUtilFileListGetText - io - get file list and read as text
+- feat(core): NodeRegionCropLocationBurnNumz - num - burn crop location (center & size)
+- feat(core): NodeRegionCropLocationBurnTxtz - txt - burn crop location (center & size)
+- feat(core): NodeRegionCropLocationBurnLtwh - int - burn crop location (lt & size)
+- feat(core): NodeRegionPaddingSquareLocationBurn - int - burn padding location as square (size)
+- feat(core): NodeCutoffRegionTextBurn - cutoff - region text burn
+- feat(core): NodeCutoffRegionColorTextPreset - cutoff - color preset of region text
