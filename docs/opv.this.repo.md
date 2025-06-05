@@ -88,7 +88,8 @@ sh -c "cp -r /d/code/python/panz/comfyui-nodes/ymc-node-suite-comfyui /o/app/Com
 ## opv - docs
 ```bash
 git add README.md ; git commit -m "docs(core): put usage"
-
+git add . ; git commit -m "build(core): use shotscreen"
+git add docs/opv.*.md ; git commit -m "docs(core): put note"
 
 git add . ; git commit -m "refactor(core): reset dirs"
 git add . ; git commit -m "refactor(core): rename nodes map"
@@ -113,4 +114,56 @@ sh -c "mkdir -p shotscreen"
 
 sh -c "cp -r /o/app/ComfyUI/my_workflows/nodes*.png shotscreen/"
 
+```
+
+## changelog
+
+
+## clog - gen feat of from source code
+
+```powershell
+# yours edit-docs -h
+yours feat --field feat --src-file modules/text/node_plain.py --out-file CHANGELOG.md --mode overide
+
+yours feat --field feat --src-file modules/text/node_prompt.py --out-file CHANGELOG.md --mode tail
+
+yours feat --field feat --src-file modules/text/node_pyio.py --out-file CHANGELOG.md --mode tail
+
+yours feat --field feat --src-file modules/text/node_region.py --out-file CHANGELOG.md --mode tail
+
+yours feat --field feat --src-file modules/text/node_cutoff_region.py --out-file CHANGELOG.md --mode tail
+
+# add commit msg for this work:
+# git add CHANGELOG.md ; git commit -m "chore(core): gen feat of from source code"
+```
+
+## clog - code size/feat/docs - name
+
+```powershell
+# set description in markdown file ?
+# yours edit-docs --tpl-file docs.template.md --data "$pkgdesc" --label "<!-- inject-desc -->" --out-file README.md --workspace "$wsroot/$pkgsloc/$name"
+
+yours edit-docs --tpl-file docs.template.md --data "$pkgdesc" --label "{description}" --out-file README.md --workspace "$wsroot/$pkgsloc/$name"
+
+# set file size in markdown file ?
+# yours edit-docs --tpl-file README.md --data-file lib-size.md --label "<!-- inject-file-size -->" --out-file README.md --workspace "$wsroot/$pkgsloc/$name"
+
+# set features in markdown file ?
+yours edit-docs --tpl-file README.md --data-file CHANGELOG.md --label "<!-- inject-features -->" --out-file README.md --workspace "$wsroot/$pkgsloc/$name"
+
+# set installing package in markdown file ?
+yours edit-docs --tpl-file README.md --data "$name" --label "{package}" --out-file README.md --workspace "$wsroot/$pkgsloc/$name"
+
+
+# set demo in markdown file ?
+# yours edit-docs --tpl-file README.md --data-file examples/main.py --label "<!-- inject-demo -->" --out-file README.md --workspace "$wsroot/$pkgsloc/$name"
+
+# set demo in markdown file ? (demo.md)
+yours edit-docs --tpl-file README.md --data-file demo.md --label "<!-- inject-demo -->" --out-file README.md --workspace "$wsroot/$pkgsloc/$name"
+
+
+# add and set msg for this
+# git add "packages/$name/*.md" ; git commit -m "docs(core): gen docs";
+
+# git add "packages/$name/*.md" ; git commit -m "docs(core): put docs";
 ```
