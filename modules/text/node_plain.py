@@ -1,7 +1,11 @@
 import random
 from yors_pano_list_util import ListDelExclude,ListFillOne,ListToTupe,ListShuffle
 
-from .conf import CURRENT_CATEGORY,CURRENT_FUNCTION
+# from .conf import CURRENT_CATEGORY,CURRENT_FUNCTION
+# feat(core): use ymc suite/text/plain as category
+CURRENT_CATEGORY="ymc suite/text/plain"
+CURRENT_FUNCTION="exec"
+
 
 def TextListRandom(text:str, seed,char='|'):
     """
@@ -82,7 +86,7 @@ class NodePlainTextList:
     RETURN_NAMES = ListToTupe(TEXT_LIST_RETURN_NAMES)
     FUNCTION = CURRENT_FUNCTION
     CATEGORY = CURRENT_CATEGORY
-    NODE_DESC = "plain - input text preset"
+    NODE_DESC = "input text preset"
     OUTPUT_NODE = True
 
     def exec(self, a,b,c,d,e,f,g):
@@ -108,7 +112,7 @@ class NodePlainTextListAdv:
     RETURN_NAMES = ListToTupe(TEXT_LIST_ADV_RETURN_NAMES)
     FUNCTION = CURRENT_FUNCTION
     CATEGORY = CURRENT_CATEGORY
-    NODE_DESC = "plain - input text preset - adv"
+    NODE_DESC = "input text preset - adv"
     OUTPUT_NODE = True
 
     def exec(self,prefix, a,b,c,d,e,f,g):
@@ -143,7 +147,7 @@ class NodePlainTextListJoinTextAdv:
     RETURN_NAMES = ListToTupe(['text','a','b','c','d','e','f','g'])
     FUNCTION = CURRENT_FUNCTION
     CATEGORY = CURRENT_CATEGORY
-    NODE_DESC = "plain - join text to text preset - adv"
+    NODE_DESC = "join text to text preset - adv"
     OUTPUT_NODE = True
 
     def exec(self,text, a,b,c,d,e,f,g,action="none"):
@@ -180,7 +184,7 @@ class NodePlainTextJoin:
     RETURN_NAMES = ListToTupe(['text'])
     FUNCTION = CURRENT_FUNCTION
     CATEGORY = CURRENT_CATEGORY
-    NODE_DESC = "plain - join text"
+    NODE_DESC = "join text"
 
 
     OUTPUT_NODE = True
@@ -213,7 +217,7 @@ class NodePlainTextRandom:
     RETURN_NAMES = ListToTupe(['text','seed'])
     FUNCTION = CURRENT_FUNCTION
     CATEGORY = CURRENT_CATEGORY
-    NODE_DESC = "plain - random text in list"
+    NODE_DESC = "random text in list"
     def exec(self, text, seed,char='|'):
         return TextListRandom(text,seed,char)
         
@@ -240,7 +244,7 @@ class NodePlainTextLoop:
     RETURN_NAMES = ListToTupe(['text','seed','index','count'])
     FUNCTION = CURRENT_FUNCTION
     CATEGORY = CURRENT_CATEGORY
-    NODE_DESC = "plain - get text in list (loop)"
+    NODE_DESC = "get text in list (loop)"
 
     def exec(self, text, seed,char='|'):
         return TextListLoop(text, seed,char)
@@ -269,7 +273,7 @@ class NodePlainTextReplace:
     RETURN_NAMES = ListToTupe(['text'])
     FUNCTION = CURRENT_FUNCTION
     CATEGORY = CURRENT_CATEGORY
-    NODE_DESC = "plain - replace"
+    NODE_DESC = "replace"
 
 
     def exec(self, text, find, replace,action='yes'):
@@ -329,7 +333,7 @@ class NodeNumStrToNum:
     RETURN_NAMES = ListToTupe(["number", "float", "roundInt"])
     FUNCTION = CURRENT_FUNCTION
     CATEGORY = CURRENT_CATEGORY
-    NODE_DESC = "plain - to number"
+    NODE_DESC = "to number"
     
     def exec(self, text=''):
         strInt = int(text)
@@ -355,7 +359,7 @@ class NodeNumStrToBool:
     RETURN_NAMES = ListToTupe(["boolean"])
     FUNCTION = CURRENT_FUNCTION
     CATEGORY = CURRENT_CATEGORY
-    NODE_DESC = "plain - is round to x"
+    NODE_DESC = "is round to x"
 
     def exec(self, a='1', isRoundTo='1'):
         return ListToTupe([NumStrIsRoundToA(a,isRoundTo)])
@@ -379,7 +383,7 @@ class NodePlainTextSwitchWithBool:
     RETURN_NAMES = ListToTupe(["text"])
     FUNCTION = CURRENT_FUNCTION
     CATEGORY = CURRENT_CATEGORY
-    NODE_DESC = "plain - switch a and b"
+    NODE_DESC = "switch a and b"
 
     def exec(self, a='', b='', boolean:bool=True):
         if boolean==True:
@@ -407,7 +411,7 @@ class NodePlainTextSwitchWithText:
     RETURN_NAMES = ListToTupe(["text"])
     FUNCTION = CURRENT_FUNCTION
     CATEGORY = CURRENT_CATEGORY
-    NODE_DESC = "plain - switch a and b (isRoundTo)"
+    NODE_DESC = "switch a and b (isRoundTo)"
     def exec(self, a='', b='', text='1',isRoundTo='1'):
         if NumStrIsRoundToA(text,isRoundTo):
             return (a, )
@@ -424,7 +428,7 @@ class NodePlainTextSwitchWithText:
 #     # INPUT_IS_LIST = True
 #     FUNCTION = CURRENT_FUNCTION
 #     CATEGORY = CURRENT_CATEGORY
-#     NODE_DESC = "plain - show text"
+#     NODE_DESC = "show text"
 #     OUTPUT_NODE = True
 #     RETURN_TYPES = ('STRING',)
 #     # OUTPUT_IS_LIST = (True,)
@@ -451,7 +455,7 @@ class NodeTextShow:
     RETURN_TYPES = ("STRING",)
     FUNCTION = CURRENT_FUNCTION
     CATEGORY = CURRENT_CATEGORY
-    NODE_DESC = "plain - show text"
+    NODE_DESC = "show text"
     OUTPUT_NODE = True
     OUTPUT_IS_LIST = (True,)
     def exec(self, text, unique_id = None, extra_pnginfo=None):
@@ -480,7 +484,7 @@ class NodeTextCalcSize:
     RETURN_NAMES = ListToTupe(['w','h'])
     FUNCTION = CURRENT_FUNCTION
     CATEGORY = CURRENT_CATEGORY
-    NODE_DESC = "plain - cacluate width and height"
+    NODE_DESC = "cacluate width and height"
     OUTPUT_NODE = True
 
     def exec(self,w=512, h=512,lockoff='false',rate='1:1',reverse='false'):
