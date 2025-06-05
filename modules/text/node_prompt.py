@@ -6,7 +6,7 @@ from yors_pano_list_util import ListDelExclude,ListFillOne,ListToTupe,ListShuffl
 # use current_category and current_function from con.py in current directory
 # from .conf import CURRENT_CATEGORY,CURRENT_FUNCTION
 
-# docs(core): use current_category and current_function  in this file
+# feat(core): use ymc suite/text as category
 CURRENT_CATEGORY="ymc suite/text"
 CURRENT_FUNCTION="exec"
 
