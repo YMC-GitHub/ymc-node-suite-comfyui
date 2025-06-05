@@ -8,6 +8,20 @@ ymc 's  nodes for comfyui
 - you can find it in right mouse menu : `ymc suite`
 - ~~you can find it in right mouse menu : `ymc/utils` (as alias)~~
 
+## Nodes
+- nodes show in console:
+<div style="text-align: center;">
+  <img src="./shotscreen/nodes.console.png" alt="console" width="256">
+  <!-- <img src="./shotscreen/nodes.right.menu.png" alt="right mouse menu" width="256"> -->
+</div>
+
+- nodes show in right mouse menu:
+
+<div style="text-align: center;">
+  <!-- <img src="./shotscreen/nodes.console.png" alt="console" width="256"> -->
+  <img src="./shotscreen/nodes.right.menu.png" alt="right mouse menu" width="256">
+</div>
+
 ## Based-on
 
 - pypi package [yors_comfyui_node_setup](https://pypi.org/project/yors_comfyui_node_setup/) -  setup comfyui custom nodes easily

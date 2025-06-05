@@ -109,5 +109,8 @@ git rm README.*.md
 
 ## opv - shotscreen
 ```bash
+sh -c "mkdir -p shotscreen"
+
+sh -c "cp -r /o/app/ComfyUI/my_workflows/nodes*.png shotscreen/"
 
 ```
