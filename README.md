@@ -39,7 +39,7 @@ ymc 's  nodes for comfyui
 
 - [docs for publishing to comfy registey](https://docs.comfy.org/registry/overview)
 
-- installed with comfy-cli ? `comfy node registry-install ymc-node-suite-comfyui`
+- installed with comfy-cli ? ~~`comfy node registry-install ymc-node-suite-comfyui` ~~ (409,Unclaimed)
 
 ## Author
 
